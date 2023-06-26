@@ -8,6 +8,11 @@ C = Fore.CYAN + Style.BRIGHT + Back.BLACK
 Y = Fore.YELLOW + Style.BRIGHT + Back.BLACK
 B = Fore.BLUE + Back.BLACK + Style.BRIGHT
 
+## This file is used to create a list of emails to check. You'll need to feed it a text 
+## file. Example: My name is Brendan Frisby. My text file could have the words brendan, 
+## frisby, 92, and B. If I give that text file to this script, it will create all 
+## combinations of those words. Then I can use that list to check for valid Emails with 
+## GmailEnum.
 
 def crunch():
     print(Y + "Crunch together all words under a specified max length.")
