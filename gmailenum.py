@@ -44,20 +44,26 @@ for user in inputter:
     if x < 10:
         print("Since the input is less than 10 lines, not checking for normalization")
         email = user.strip()
+        # print(email)
     elif normalized == 0:
         email = user.strip() + "@" + args.domain
+        # print(email)
     elif normalized == 11:
         email = user.strip()
+        # print(email)
     else:
         print("Something is not quite right, make sure you input file is either all email addresses or usernames")
 
     URLReq = "https://mail.google.com/mail/gxlu?email=" + email
     r = requests.get(url=URLReq)
+    # print(r.json)
     data = str(r.headers)
+    # print(data)
     index = data.find("Set-Cookie")
     if data.find("Set-Cookie") != -1:
         prGreen("[+] " + email + " is a valid account")
         validAccounts.append(email)
+        # print(email)
     else:
         prRed("[-] " + email + " not valid")
 
